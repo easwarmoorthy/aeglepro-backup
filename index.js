@@ -47,7 +47,7 @@ async function uploadFile(backupFile) {
 
 const takePGBackup = () => {
   const date = new Date()
-  date.setDate(date.getDate() - 40)
+  date.setDate(date.getDate())
   let backupFile = date.toISOString().substring(0, 10)
   console.log(backupFile)
   execute(`export PGPASSWORD=${process.env.PGPASS}; pg_dump -U ${username} -h ${dbHost} -p ${dbPort} -f ${backupFile} -F t -d ${database}`)
