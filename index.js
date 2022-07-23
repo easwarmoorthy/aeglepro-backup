@@ -38,10 +38,11 @@ async function uploadFile(backupFile) {
     date.setDate(date.getDate() - 40)
     let oldFile = date.toISOString().substring(0, 10) + '.gz'
 
-    await firebase.storage().bucket().file(oldFile).delete();
+    const response = await firebase.storage().bucket().file(oldFile).delete();
     console.info(`Past month backup file deleted\n\n`);
   } catch (error) {
-    console.error(error)
+    console.error(error.message)
+    console.error(error.errors[0])
   }
 }
 
