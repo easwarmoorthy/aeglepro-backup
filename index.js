@@ -39,10 +39,9 @@ async function uploadFile(backupFile) {
     let oldFile = date.toISOString().substring(0, 10) + '.gz'
 
     const response = await firebase.storage().bucket().file(oldFile).delete();
-    console.info(`Past month backup file deleted\n\n`);
+    console.info(`Past month backup file deleted`);
   } catch (error) {
     console.error(error.message)
-    console.error(error.errors[0])
   }
 }
 
@@ -68,6 +67,6 @@ const takePGBackup = () => {
 
 
 cron.schedule('0 0 * * *', function () {
-  console.info('Cron Job ---', (new Date()).toISOString())
+  console.info('\n\nCron Job ---', (new Date()).toISOString())
   takePGBackup()
 });
