@@ -1,0 +1,20 @@
+{
+  "name": "backup_postgres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@getvim/execute": "^1.0.0",
+    "dotenv": "^16.0.1",
+    "firebase-admin": "^11.0.0",
+    "gzipme": "^1.0.0",
+    "node-cron": "^3.0.1",
+    "standard": "^17.0.0",
+    "uuid": "^8.3.2"
+  }
+}
