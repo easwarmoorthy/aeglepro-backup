@@ -2,7 +2,7 @@ const { v4 } = require('uuid');
 const cron = require('node-cron');
 const { execute } = require('@getvim/execute');
 const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config({ override: true })
 const compress = require('gzipme');
 const fs = require('fs');
 const firebase = require('./firebase/index')
